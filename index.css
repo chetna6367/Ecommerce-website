@@ -116,7 +116,23 @@ body {
     color: #088178;
 }
 
-#navbar li a.action::after,
+#navbar a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+#navbar a:hover {
+  color: #ff6600;
+}
+
+#navbar a.active {
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+}
+
+
+/* #navbar li a.action::after, */
 #navbar li a:hover::after{
      content: "";
     position: absolute;
@@ -127,6 +143,10 @@ body {
     background-color: teal;
     transition: 0.3s;
     
+}
+#navbar a.active {
+  color: #088178;
+  border-bottom: 2px solid #088178;
 }
 
 /* hover underline */
@@ -729,6 +749,17 @@ footer .copyright{
     }
     footer .copyright{
         text-align: start;
+    }
+
+    #cart-add{
+        flex-direction: column;
+    }
+    #coupon{
+        width: 100%;
+    }
+    #subtotal{
+        width: 100%;
+        padding: 20px;
     }
 
 }

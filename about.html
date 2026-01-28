@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- <header class="header">
+    <h1 class="logo"> <a href="index.html"><img src="./img/logo.png" class="logo" alt="Logo"></a></h1>
+  </header>
+ <div id="navbar-container"></div> -->
+ <section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
+      <div id="navbar-container"></div>
+        <div class="mobile">
+            <!-- <a href="cart.html"> <i class="far fa-shopping-bag"></i> -->
+                <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section>
+  <!-- Hero -->
+  <section class="about-hero">
+    <h2>About Us</h2>
+    <p>
+      Designed for comfort. Crafted with care. Made to last.
+    </p>
+  </section>
+
+  <!-- About Content -->
+  <section class="about-content">
+    <div class="container">
+
+      <div class="about-text">
+        <h3>Our Story</h3>
+        <p>
+          We started with a simple idea — to create thoughtfully designed,
+          high-quality products that bring comfort and confidence into everyday
+          life. Every piece we make is inspired by timeless design and modern
+          living.
+        </p>
+
+        <p>
+          From sourcing premium materials to ethical production, we believe in
+          creating products that feel as good as they look.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="./img/about/brand.jpg" alt="About brand">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values">
+    <h3>What We Believe In</h3>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <h4>Quality First</h4>
+        <p>We use premium materials and thoughtful craftsmanship.</p>
+      </div>
+
+      <div class="value-card">
+        <h4>Sustainability</h4>
+        <p>Responsible sourcing and ethical production practices.</p>
+      </div>
+
+      <div class="value-card">
+        <h4>Customer Happiness</h4>
+        <p>Your comfort and satisfaction are always our priority.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <h3>Want to Know More?</h3>
+    <p>We’re always happy to connect with you.</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+  </section>
+<script>fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-container").innerHTML = data;
+
+    // ===== ACTIVE LINK LOGIC =====
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll("#navbar a");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>

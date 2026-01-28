@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecommerce Website</title>
     <link rel="stylesheet" href="index.css">
     <head>
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/> -->
@@ -15,20 +15,9 @@
 <body>
     <section id="header">
         <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
-        <div>
-          
-            <ul id="navbar">
-                <li><a class="action" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a id ="lg-bag" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="far fa-times"></i></a>
-            </ul>
-        </div>
+      <div id="navbar-container"></div>
         <div class="mobile">
-            <a href="cart.html"> <i class="far fa-shopping-bag"></i>
+            <!-- <a href="cart.html"> <i class="far fa-shopping-bag"></i> -->
                 <i id="bar" class="fas fa-outdent"></i>
         </div>
 
@@ -39,7 +28,7 @@
       <span>Trade-in-offer</span>
       <h1>Super value deals<br>On all products</h1>
       <p>Save more with coupons & up to 70% off!</p>
-      <button>Shop Now →</button>
+      <button onclick="window.location.href='shop.html'">Shop Now →</button>
    </div>
 
     </section>
@@ -394,7 +383,8 @@
         <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
       </div>
       <div class="form">
-        <input type="text" placeholder="Your email address">
+       
+        <input type="text" name="email" placeholder="Your email address">
         <button class="normal">Sign Up</button>
       </div>
     </section>
@@ -437,18 +427,39 @@
         <h4>Install App</h4>
         <p>From App Store or Google Play</p>
         <div class="row">
-            <img src="img/pay/app.jpg" alt="">
-            <img src="img/pay/play.jpg" alt="">
+            <img src="img/pay/app.jpg" alt="" >
+            <a href="https://play.google.com/store/games?hl=en_IN">
+                <img src="img/pay/play.jpg" alt="Product">
+            </a>
+
+            <!-- <img src="img/pay/play.jpg" alt=""> -->
         </div>
         <p>Secured Payment Gateays</p>
         <img src="img/pay/pay.png" alt="">
     </div>
 
     <div class="copyright">
-       <p>© 2021, tech2 etc - HTML CSS Ecommerce Template</p>
+       <p>© 2026, Chetna Kanawat - HTML CSS Ecommerce Template</p>
     </div>
     </footer>
     
-    <script src="index.js"></script>
+    <script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-container").innerHTML = data;
+
+    // ===== ACTIVE LINK =====
+    const currentPage =
+      window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll("#navbar a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop</title>
+  <link rel="stylesheet" href="./shop.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body>
+
+<!-- <header class="header">
+   <h1 class="logo" style="color: white;"><a href="index.html"><img src="./img/logo.png" style="color: white;" class="logo" alt="Logo"></a></h1 >
+    <div id="navbar-container"></div>
+  <h1>🛒 Our Shop</h1>
+  
+</header> -->
+<section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
+      <div id="navbar-container"></div>
+        <div class="mobile">
+            <!-- <a href="cart.html"> <i class="far fa-shopping-bag"></i> -->
+                <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section>
+<section class="shop">
+
+  <div class="product">
+    <img src="img/products/f1.jpg">
+    <h3>Wireless Headphone</h3>
+    <p class="price">₹1999</p>
+    <button onclick="addToCart(
+  1,
+  'Cartoon Astronaut T-shirt',
+  118.19,
+  'img/products/f1.jpg'
+)">
+Add to Cart
+</button>
+
+  </div>
+
+  <div class="product">
+    <img src="img/products/f2.jpg">
+    <h3>Smart Watch</h3>
+    <p class="price">₹2999</p>
+  <button onclick="addToCart(
+  2,
+  'Cartoon Astronaut T-shirt',
+  118.19,
+  'img/products/f2.jpg'
+)">
+Add to Cart
+</button>
+
+  </div>
+
+  <div class="product">
+    <img src="img/products/f3.jpg">
+    <h3>Running Shoes</h3>
+    <p class="price">₹2499</p>
+<button onclick="addToCart(
+  3,
+  'Cartoon Astronaut T-shirt',
+  118.19,
+  'img/products/f3.jpg'
+)">
+Add to Cart
+</button>
+
+  </div>
+
+</section>
+<!-- <button onclick="addToCart(
+  1,
+  'Cartoon Astronaut T-shirt',
+  118.19,
+  'img/products/f1.jpg'
+)"
+</button> -->
+
+
+
+<!-- CART SECTION -->
+<!-- <section class="cart">
+  <h2>🧾 Cart</h2>
+  <ul id="cart-items"></ul>
+  <h3>Total: ₹<span id="total">0</span></h3>
+</section>-->
+
+<script src="shop.js"></script>
+<script>fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-container").innerHTML = data;
+
+    // ===== ACTIVE LINK LOGIC =====
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll("#navbar a");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html> 

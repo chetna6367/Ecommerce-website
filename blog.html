@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog</title>
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body>
+
+  <!-- Header -->
+      <!-- <section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
+      <div id="navbar-container"></div>
+        <div class="mobile">
+            <a href="cart.html"> <i class="far fa-shopping-bag"></i>
+                <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section> -->
+    <section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
+      <div id="navbar-container"></div>
+        <div class="mobile">
+            <!-- <a href="cart.html"> <i class="far fa-shopping-bag"></i> -->
+                <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section>
+  
+
+  <!-- Hero -->
+  <section class="blog-hero">
+    <h2>Our Journal</h2>
+    <p>
+      Stories, inspiration, and insights from our world.
+    </p>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <div class="container" id="blogContainer">
+
+      <!-- Blog Card -->
+      <div class="blog-card">
+        <img src="./img/blog/ryunosuke-kikuno-umEy2XcCDGY-unsplash.jpg" alt="">
+        <div class="blog-content">
+          <span class="category">Lifestyle</span>
+          <h3>The Art of Everyday Comfort</h3>
+          <p>
+            Discover how thoughtful design and quality fabrics can transform
+            everyday living.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Card -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" alt="">
+        <div class="blog-content">
+          <span class="category">Sustainability</span>
+          <h3>Why Sustainable Fashion Matters</h3>
+          <p>
+            A closer look at our commitment to ethical sourcing and responsible
+            production.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Card -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="">
+        <div class="blog-content">
+          <span class="category">Design</span>
+          <h3>Behind the Design Process</h3>
+          <p>
+            From concept to creation — how our designs come to life.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="blog-cta">
+    <h3>Stay Inspired</h3>
+    <p>Follow our journal for the latest stories and updates.</p>
+    <button id="viewAllBtn" onclick="">View All Posts</button>
+  </section>
+  <script src="blog.js"></script>
+  <script>fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-container").innerHTML = data;
+
+    // ===== ACTIVE LINK LOGIC =====
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll("#navbar a");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });</script>
+</body>
+</html>
+

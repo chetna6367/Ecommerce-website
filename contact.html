@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Help</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- <header class="header">
+    <h1 class="logo"> <a href="index.html"><img src="./img/logo.png" class="logo" alt="Logo"></a></h1>
+    <div id="navbar-container"></div>
+  </header> -->
+  <section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo" alt="Logo"></a>
+      <div id="navbar-container"></div>
+        <div class="mobile">
+            <!-- <a href="cart.html"> <i class="far fa-shopping-bag"></i> -->
+                <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section>
+
+   
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Customer Help</h2>
+    <p>
+      If talking to a real-life human is more your thing, you can reach our
+      Customer Happiness Team via email (below).
+    </p>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+
+      <!-- Left Sidebar -->
+      <aside class="sidebar">
+        <h4>How Can We Help?</h4>
+        <ul>
+          <li>FAQs</li>
+          <li>Ordering</li>
+          <li>Shipping</li>
+          <li>Returns + Exchanges</li>
+          <li>International</li>
+          <li>Sustainability</li>
+          <li class="active">Contact</li>
+        </ul>
+      </aside>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Contact Us</h3>
+        <form>
+          <input type="text" placeholder="Subject" required />
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Enter your message here..." rows="5"></textarea>
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+
+      <!-- Support Info -->
+      <div class="support-info">
+        <h4>Support Hours:</h4>
+        <p>Mon–Fri: 9:00am – 5:00pm PST</p>
+        <p>*Excludes Holidays</p>
+        <p class="faq-link">Looking for more info on products, shipping, fabric, and more?</p>
+        <a href="#">VIEW FAQ</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="cta">
+    <h3>Get in Touch</h3>
+    <p>Have questions about your order, or a general inquiry?</p>
+    <button>Email Us</button>
+  </section>
+<script>fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-container").innerHTML = data;
+
+    // ===== ACTIVE LINK LOGIC =====
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll("#navbar a");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
